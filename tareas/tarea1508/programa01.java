@@ -18,15 +18,22 @@ public class Tareametodos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int n = 0, hom, muj, hombresAfavor = 0, mujeresEnContra = 0, total, totalAfavor = 0;
-        System.out.println("Ingrese la cantidad de hombres");
-        hom = leerInt();
-        System.out.println("Ingrese la cantidad de mujeres");
-        muj = leerInt();
+        int n = 0, hom = 0, muj = 0, hombresAfavor = 0, mujeresEnContra = 0, total, totalAfavor = 0, confirm = 0;
+        while (confirm == 0) {
+            System.out.println("Ingrese la cantidad de hombres");
+            hom = leerInt();
+            System.out.println("Ingrese la cantidad de mujeres");
+            muj = leerInt();
+            if (hom + muj == 0) {
+                System.out.println("Ingrese por lo menos un encuestado");
+            } else {
+                confirm = 1;
+            }
+        }
         total = muj + hom;
         char encuest[][] = new char[2][hom + muj];
         char res;
-        while (n < encuest.length) {
+        while (n < total) {
             while (hom > 0) {
                 System.out.println("Ingrese respuesta del Hombre " + (n + 1) + "\nS si aprueba la gestión del gobierno, N si no aprueba la gestión del gobierno, X si no sabe o no responde");
                 res = leerRespuesta();
@@ -38,24 +45,31 @@ public class Tareametodos {
                     totalAfavor++;
                 }
             }
-            n = 0;
-            while (muj > 0) {
-                System.out.println("Ingrese respuesta de la Mujer " + (n + 1) + "\nS si aprueba la gestión del gobierno, N si no aprueba la gestión del gobierno, X si no sabe o no responde");
-                res = leerRespuesta();
-                encuest[1][n] = res;
-                muj--;
-                n++;
-                if (res == 'N') {
-                    mujeresEnContra++;
-                }
-                if (res == 'S') {
-                    totalAfavor++;
+            if (muj != 0) {
+                while (muj > 0) {
+                    System.out.println("Ingrese respuesta de la Mujer " + (n + 1) + "\nS si aprueba la gestión del gobierno, N si no aprueba la gestión del gobierno, X si no sabe o no responde");
+                    res = leerRespuesta();
+                    encuest[1][n] = res;
+                    muj--;
+                    n++;
+                    if (res == 'N') {
+                        mujeresEnContra++;
+                    }
+                    if (res == 'S') {
+                        totalAfavor++;
+                    }
                 }
             }
         }
-        System.out.print("\nHombres ");
-        for (int i = 0; i < total - n; i++) {
-            System.out.print(encuest[0][i] + "  ");
+        if (n == 1 && muj == 0) {
+            System.out.print("\nHombres ");
+            for (int i = 0; i < total; i++) {
+                System.out.print(encuest[0][i] + "  ");
+            }
+        } else {
+            for (int i = 0; i < total-n; i++) {
+                System.out.print(encuest[0][i] + "  ");
+            }
         }
         System.out.print("\nMujeres ");
         for (int i = 0; i < n; i++) {
@@ -90,8 +104,8 @@ public class Tareametodos {
             try {
                 Scanner num = new Scanner(System.in);
                 aux = num.nextInt();
-                if (aux <= 0) {
-                    System.out.println("Ingrese un número mayor a 0");
+                if (aux < 0) {
+                    System.out.println("Ingrese un número positivo");
                 } else {
                     n = aux;
                     confirm = 1;
