@@ -1,0 +1,26 @@
+clase Producto
+int precio
+int codigo
+String nombre
+int cantidad
+
+producto(int newprecio,int newcodigo,String newnombre,int newcantidad)
+{
+  precio=newprecio;
+  codigo=newcodigo;
+  nombre=newnombre;
+  cantidad=newcantidad;
+}
+
+clase Inventario
+arraylist<Producto> array = new arraylist<Producto>();
+
+crearProducto(int,int,String,int)
+{
+  Producto prod = new Porducto(int,int,String,int);
+  array.add(prod);
+}
+
+vender(int i){
+  prod.get(i).setCantidad(prod.get(i).getCantidad()-1);
+}
