@@ -21,6 +21,6 @@ crearProducto(int,int,String,int)
   array.add(prod);
 }
 
-vender(int i){
-  prod.get(i).setCantidad(prod.get(i).getCantidad()-1);
+vender(int i, int cant){
+  prod.get(i).setCantidad(prod.get(i).getCantidad()-cant);
 }
