@@ -1,15 +1,15 @@
 clase Producto
-int precio
-String codigo
 String nombre
+String codigo
+int precio
 int cantidad
 
-producto(int newprecio,String newcodigo,String newnombre,int newcantidad)
+producto(String newnombre,String newcodigo,int newprecio,int newcantidad)
 {
-  precio=newprecio;
-  codigo=newcodigo;
-  nombre=newnombre;
-  cantidad=newcantidad;
+  this.precio=newprecio;
+  this.codigo=newcodigo;
+  this.nombre=newnombre;
+  this.cantidad=newcantidad;
 }
 
 clase Inventario
