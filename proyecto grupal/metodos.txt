@@ -85,10 +85,10 @@ import com.csvreader.CsvReader;
         {
             String nombre = productos_import.get(0);
             String codigo = productos_import.get(1);
-            int precio = productos_import.get(2);
-            int cantidad = productos_import.get(3);
+            String precio = productos_import.get(2);
+            String cantidad = productos_import.get(3);
              
-            array.add(new Producto(nombre, codigo, precio, cantidad));    
+            array.add(new Producto(nombre, codigo, Integer.parseInt(precio), Integer.parseInt(cantidad))); 
         }
          
         productos_import.close();
