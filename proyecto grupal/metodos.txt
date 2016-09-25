@@ -33,7 +33,7 @@ import java.util.List;
  
 import com.csvreader.CsvWriter;   
         
-        guardarCsv(){
+        public void guardarCsv(){
         String outputFile = "test/productos.csv";
         boolean alreadyExists = new File(outputFile).exists();
          
@@ -63,6 +63,38 @@ import com.csvreader.CsvWriter;
              
             csvOutput.close();
          
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+_____________________________________________-
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+ 
+import com.csvreader.CsvReader;
+
+    public void cargarCsv() {
+        try {
+         
+        CsvReader productos_import = new CsvReader("test/productos.csv");
+        productos_import.readHeaders();
+         
+        while (productos_import.readRecord())
+        {
+            String nombre = productos_import.get(0);
+            String codigo = productos_import.get(1);
+            int precio = productos_import.get(2);
+            int cantidad = productos_import.get(3);
+             
+            array.add(new Producto(nombre, codigo, precio, cantidad));    
+        }
+         
+        productos_import.close();
+          
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
