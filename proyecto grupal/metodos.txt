@@ -1,10 +1,10 @@
 clase Producto
 int precio
-int codigo
+String codigo
 String nombre
 int cantidad
 
-producto(int newprecio,int newcodigo,String newnombre,int newcantidad)
+producto(int newprecio,String newcodigo,String newnombre,int newcantidad)
 {
   precio=newprecio;
   codigo=newcodigo;
@@ -15,9 +15,9 @@ producto(int newprecio,int newcodigo,String newnombre,int newcantidad)
 clase Inventario
 arraylist<Producto> array = new arraylist<Producto>();
 
-crearProducto(int,int,String,int)
+crearProducto(int,String,String,int)
 {
-  Producto prod = new Porducto(int,int,String,int);
+  Producto prod = new Porducto(int,String,String,int);
   array.add(prod);
 }
 
