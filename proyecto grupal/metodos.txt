@@ -56,8 +56,8 @@ import com.csvreader.CsvWriter;
                  
                 csvOutput.write(array.get(i).getNombre());
                 csvOutput.write(array.get(i).getCodigo());
-                csvOutput.write(array.get(i).getPrecio());
-                csvOutput.write(array.get(i).getCantidad());
+                csvOutput.write(Integer.toString(array.get(i).getPrecio()));
+                csvOutput.write(Integer.toString(array.get(i).getCantidad()));
                 csvOutput.endRecord();                   
             }
              
