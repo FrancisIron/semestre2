@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyecto;
 import java.io.File;
 import java.io.FileWriter;
@@ -20,7 +15,7 @@ public class Proyecto {
         
         //guardar
         ArrayList<Producto> array = new ArrayList<>();
-        /*
+        
         Producto prod = new Producto("producto1","0001",1500,15);
         array.add(prod);
         Producto prod2 = new Producto("producto2","0002",200,10);
@@ -58,7 +53,8 @@ public class Proyecto {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // */
+        
+        // cargar
         
         try {
          
