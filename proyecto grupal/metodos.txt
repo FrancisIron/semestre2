@@ -47,7 +47,7 @@ import com.csvreader.CsvWriter;
             CsvWriter csvOutput = new CsvWriter(new FileWriter(outputFile, true), ',');
              
             csvOutput.write("Nombre");
-            csvOutput.write("Código");
+            csvOutput.write("Codigo");
             csvOutput.write("Precio");
             csvOutput.write("Cantidad");
             csvOutput.endRecord();
