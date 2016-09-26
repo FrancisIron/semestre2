@@ -25,6 +25,26 @@ vender(int i, int cant){
   prod.get(i).setCantidad(prod.get(i).getCantidad()-cant);
   total+=(prod.get(i).getPrecio())*cant;
 }
+
+public boolean buscar(String bus){
+    boolean confirm=false;
+    if(!confirm){
+            for(int i=0;i<array.size();i++){
+                     if(array.get(i).getNombre().equals(bus)){
+                     return true; 
+                     confirm=true;
+                     }
+            }
+    }
+    if(!confirm){
+            for(int i=0;i<array.size();i++){
+            if(array.get(i).getCodigo().equals(bus)){
+            return true;
+            }
+        }
+    }
+    return false;
+}
 ______________________________________________
 import java.io.File;
 import java.io.FileWriter;
