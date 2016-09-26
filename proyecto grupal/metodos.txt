@@ -23,6 +23,7 @@ crearProducto(int,String,String,int)
 
 vender(int i, int cant){
   prod.get(i).setCantidad(prod.get(i).getCantidad()-cant);
+  total+=(prod.get(i).getPrecio())*cant;
 }
 ______________________________________________
 import java.io.File;
